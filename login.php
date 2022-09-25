@@ -12,10 +12,10 @@
     $response_json = file_get_contents("php://input");
     $data = json_decode($response_json, true);
 
-    $query_user = "SELECT * FROM user WHERE email=:email AND password=:password";
+    $query_user = "SELECT * FROM userauth WHERE email=:email AND password=:password";
     $result_user = $conn->prepare($query_user);
-    $result_user->bindParam(':email', $data['user']['email']);
-    $result_user->bindParam(':password', $data['user']['password']);
+    $result_user->bindParam(':email', $data['email']);
+    $result_user->bindParam(':password', $data['password']);
     $result_user->execute();
 
     if(($result_user) AND ($result_user->rowCount() != 0)){
