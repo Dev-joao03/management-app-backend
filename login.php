@@ -24,7 +24,8 @@
         $user = [
             'id' => $id,
             'name' => $name,
-            'email' => $email
+            'email' => $email,
+            'profile' => $profile
         ];
 
         $response = [
@@ -43,5 +44,4 @@
     http_response_code(200);
     echo json_encode($response);
 
- 
 ?>
