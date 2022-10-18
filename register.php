@@ -43,7 +43,8 @@
                     $new_user = [
                         'id' => $id,
                         'name' => $name,
-                        'email' => $email
+                        'email' => $email,
+                        'profile' => $profile,
                     ];
                 
                     $response = [
