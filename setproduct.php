@@ -13,9 +13,10 @@
     $data = json_decode($response_json, true);
 
     if($data){
-        $query_product = "SELECT name FROM inventory WHERE name=:name";
+        $query_product = "SELECT name FROM inventory WHERE name=:name AND idUser=:idUser";
         $result_product = $conn->prepare($query_product);
         $result_product->bindParam(':name', $data['name']);
+        $result_product->bindParam(':idUser', $data['idUser']);
         $result_product->execute();
 
         if($result_product->rowCount() == 0) {
